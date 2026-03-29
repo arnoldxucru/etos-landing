@@ -1,0 +1,8 @@
+{
+  "buildCommand": "echo 'ÉTOS - Landing page pronta'",
+  "outputDirectory": ".",
+  "env": {
+    "VERCEL_GIT_COMMIT_AUTHOR_NAME": "XD",
+    "VERCEL_GIT_COMMIT_AUTHOR_EMAIL": "xd@etos.ai"
+  }
+}
