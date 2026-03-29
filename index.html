@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ÉTOS - Agente IA que vende, agenda e confirma 24/7. Aumente sua receita sem contratar.">
-    <meta name="keywords" content="agente IA, automação, WhatsApp, agendamento, vendas">
-    <title>ÉTOS - Agente IA que Vende por Você 24/7</title>
-    <!-- Lucide Icons -->
+    <meta name="description" content="ÉTOS - Contrate um assistente sênior. Pague menos que um estagiário. Agente IA que vende 24/7">
+    <title>ÉTOS - Assistente IA para Seu Negócio</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * {
@@ -16,40 +14,38 @@
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #fbbf24;
-            --success: #10b981;
-            --danger: #ef4444;
-            --dark: #1f2937;
-            --gray-900: #111827;
-            --gray-800: #1f2937;
-            --gray-700: #374151;
-            --gray-600: #4b5563;
-            --gray-500: #6b7280;
-            --gray-400: #9ca3af;
-            --gray-300: #d1d5db;
-            --gray-200: #e5e7eb;
-            --gray-100: #f3f4f6;
+            --black: #0a0a0a;
+            --gold: #d4af37;
             --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-400: #a0a0a0;
+            --gray-600: #606060;
+            --gray-900: #1a1a1a;
+            --pastel-blue: #e8f4f8;
+            --pastel-cream: #fef8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            line-height: 1.6;
-            color: var(--gray-700);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: var(--gray-900);
             background: var(--white);
+            line-height: 1.6;
         }
 
         /* Header */
         header {
-            background: var(--white);
-            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            background: var(--white);
             border-bottom: 1px solid var(--gray-200);
+            padding: 1.5rem 0;
         }
 
         .container {
@@ -67,344 +63,392 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--gray-900);
-            letter-spacing: -0.5px;
+            letter-spacing: 2px;
+            color: var(--gold);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: var(--gray-600);
             text-decoration: none;
-            font-weight: 500;
+            color: var(--gray-600);
             font-size: 0.95rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--gold);
         }
 
         /* Hero */
         .hero {
-            padding: 7rem 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a2e 100%);
             color: var(--white);
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 700px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
             font-weight: 700;
             line-height: 1.2;
+            margin-bottom: 1.5rem;
             letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--gold);
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            margin-bottom: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
             opacity: 0.95;
-            font-weight: 400;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gold);
+            color: var(--black);
+            padding: 1.25rem 2.5rem;
             border: none;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            transition: all 0.3s;
         }
 
-        .btn-primary {
-            background: var(--accent);
-            color: var(--gray-900);
-        }
-
-        .btn-primary:hover {
-            background: #f59e0b;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary);
+        .cta-primary:hover {
+            background: #e8c23b;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
         }
 
         /* Stats */
-        .stats {
+        .stats-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
             font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
         }
 
-        .stat-item p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            font-weight: 500;
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        /* Sections */
+        /* Section Styles */
         .section {
             padding: 5rem 0;
         }
 
-        .section.light {
-            background: var(--gray-50);
-        }
-
         .section-title {
             font-size: 2.5rem;
-            margin-bottom: 3.5rem;
-            color: var(--gray-900);
             font-weight: 700;
-            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--black);
         }
 
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--gray-600);
-            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.7;
             max-width: 600px;
-            margin: 0 auto 3rem;
         }
 
-        /* Problem/Solution Cards */
-        .cards-grid {
+        /* Problem Section */
+        .section-problem {
+            background: var(--gray-50);
+        }
+
+        .problem-content {
+            max-width: 700px;
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .problem-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--gray-600);
+            stroke-width: 1.5;
+        }
+
+        /* Solution Section */
+        .solution-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .card {
+        .solution-item {
             padding: 2rem;
             background: var(--white);
-            border-radius: 0.75rem;
             border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            transition: all 0.3s;
         }
 
-        .card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
-            transform: translateY(-5px);
+        .solution-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
         }
 
-        .card.problem {
-            border-left: 4px solid var(--danger);
-            background: #fef2f2;
-        }
-
-        .card.solution {
-            border-left: 4px solid var(--success);
-            background: #f0fdf4;
-        }
-
-        .card-icon {
+        .solution-icon {
             width: 48px;
             height: 48px;
             margin-bottom: 1rem;
         }
 
-        .card-icon svg {
+        .solution-icon svg {
             width: 100%;
             height: 100%;
+            stroke: var(--gold);
             stroke-width: 1.5;
         }
 
-        .card.problem .card-icon svg {
-            color: var(--danger);
-        }
-
-        .card.solution .card-icon svg {
-            color: var(--success);
-        }
-
-        .card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--gray-900);
-            font-weight: 600;
+        .solution-item h3 {
             font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+            font-weight: 600;
         }
 
-        .card p {
-            color: var(--gray-600);
+        .solution-item p {
             font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.6;
         }
 
-        /* Pricing */
+        /* Nichos Section */
+        .section-nichos {
+            background: var(--white);
+        }
+
+        .nichos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .nicho-card {
+            padding: 2.5rem;
+            background: var(--gray-50);
+            border-left: 4px solid var(--gold);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .nicho-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nicho-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .nicho-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--gold);
+            stroke-width: 1.5;
+        }
+
+        .nicho-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .nicho-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .section-pricing {
+            background: var(--gray-50);
+        }
+
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .pricing-card {
+            padding: 2.5rem;
             background: var(--white);
             border: 2px solid var(--gray-200);
             border-radius: 0.75rem;
-            padding: 2.5rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .pricing-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
         }
 
         .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+            border-color: var(--gold);
             transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
         }
 
         .pricing-badge {
-            background: var(--primary);
-            color: var(--white);
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
             padding: 0.5rem 1rem;
             border-radius: 2rem;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            display: inline-block;
             margin-bottom: 1rem;
         }
 
         .pricing-card h3 {
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: var(--gray-900);
+            color: var(--black);
             font-weight: 600;
         }
 
         .price {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
-            margin: 1.5rem 0;
+            color: var(--gold);
+            margin: 1rem 0;
         }
 
         .price-period {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 0.9rem;
         }
 
         .features-list {
             text-align: left;
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             list-style: none;
         }
 
         .features-list li {
             padding: 0.75rem 0;
+            color: var(--gray-600);
+            font-size: 0.9rem;
             border-bottom: 1px solid var(--gray-200);
-            color: var(--gray-700);
-            font-size: 0.95rem;
         }
 
         .features-list li:before {
-            content: "✓ ";
-            color: var(--success);
-            font-weight: bold;
+            content: '✓ ';
+            color: var(--gold);
+            font-weight: 700;
             margin-right: 0.75rem;
         }
 
-        /* Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial {
-            padding: 2rem;
-            background: var(--gray-50);
-            border-radius: 0.75rem;
-            border-left: 4px solid var(--primary);
-        }
-
-        .testimonial-text {
-            margin-bottom: 1.5rem;
-            color: var(--gray-700);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--gray-900);
-            font-size: 0.95rem;
-        }
-
-        .testimonial-role {
-            color: var(--gray-600);
-            font-size: 0.85rem;
-        }
-
-        /* CTA Final */
-        .cta-final {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        /* CTA Section */
+        .section-cta {
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a2e 100%);
             color: var(--white);
+            padding: 6rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-final h2 {
+        .section-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .section-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
-        .cta-final p {
+        .section-cta p {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
         }
 
         /* Footer */
         footer {
-            background: var(--gray-900);
+            background: var(--black);
             color: var(--gray-400);
-            text-align: center;
             padding: 3rem 0;
+            text-align: center;
             font-size: 0.9rem;
+            border-top: 1px solid var(--gray-200);
         }
 
         /* Responsive */
@@ -414,131 +458,91 @@
             }
 
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             nav ul {
                 gap: 1rem;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
-            .stats {
+            .stats-row {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1rem;
             }
 
             .pricing-card.featured {
                 transform: scale(1);
             }
 
-            .cta-buttons {
-                flex-direction: column;
+            .section-title {
+                font-size: 1.8rem;
             }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .hero {
+                padding: 4rem 0;
             }
-        }
 
-        .gray-50 {
-            background-color: var(--gray-100);
+            .section {
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">ÉTOS</div>
-            <ul>
-                <li><a href="#problema">Problema</a></li>
-                <li><a href="#solucao">Solução</a></li>
-                <li><a href="#preco">Preços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">ÉTOS</div>
+                <ul>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#solucao">Solução</a></li>
+                    <li><a href="#nichos">Nichos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Seu agente de vendas que nunca dorme</h1>
-                <p class="hero-subtitle">Automatize agendamentos, respostas e follow-up via WhatsApp 24/7. Sem contratar ninguém.</p>
-                <div class="cta-buttons">
-                    <a href="#contato" class="btn btn-primary">Começar Agora</a>
-                    <a href="#solucao" class="btn btn-secondary">Ver Como Funciona</a>
-                </div>
+                <h1>Contrate um assistente <span class="highlight">sênior</span>. Pague menos que um <span class="highlight">estagiário</span>.</h1>
+                <p class="hero-subtitle">ÉTOS é um agente IA que atende, agenda e confirma seus clientes 24 horas por dia. Sem parar. Sem falta. Sem reclamação.</p>
+                <a href="https://wa.me/555499993335?text=Oi%20XD!%20Quero%20ver%20ÉTOS%20funcionando%20no%20meu%20negócio" class="cta-primary">
+                    Quero ver funcionando
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <h3>73%</h3>
-                    <p>Mais agendamentos</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">Mais agendamentos</div>
                 </div>
-                <div class="stat-item">
-                    <h3>5h+</h3>
-                    <p>Economiza por semana</p>
+                <div class="stat">
+                    <div class="stat-number">5h+</div>
+                    <div class="stat-label">Economiza por semana</div>
                 </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Atendimento automático</p>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Atendimento automático</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Problema -->
-    <section class="section light" id="problema">
+    <section class="section section-problem" id="problema">
         <div class="container">
-            <h2 class="section-title">O problema que custa dinheiro</h2>
-            <div class="cards-grid">
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <h3>Telefone não para de tocar</h3>
-                    <p>Enquanto você trabalha, perde ligações. Perde vendas.</p>
-                </div>
-
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3>Clientes desistem esperando</h3>
-                    <p>Resposta lenta = cliente vai pra concorrência.</p>
-                </div>
-
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20m10-10H2"/></svg>
-                    </div>
-                    <h3>Contratar não é opção</h3>
-                    <p>Funcionário caro, falta, sai... agente IA não.</p>
-                </div>
-
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
-                    </div>
-                    <h3>Nenhum follow-up automático</h3>
-                    <p>Clientes interessados nunca confirmam. Nunca.</p>
-                </div>
-
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
-                    <h3>Você é o gargalo</h3>
-                    <p>Negócio cresce até onde você consegue respirar.</p>
-                </div>
-
-                <div class="card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8h1a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4h1"/><rect x="7" y="1" width="10" height="7" rx="1"/></svg>
-                    </div>
-                    <h3>Receita deixada na mesa</h3>
-                    <p>Clientes querem comprar. Você não consegue atender.</p>
+            <div class="problem-content">
+                <h2 class="section-title">Seu negócio perde cliente todo dia</h2>
+                <p class="section-subtitle">Fora do horário, sem recepcionista, sem tempo — o lead vai pro concorrente. Isso custa dinheiro. Muito dinheiro.</p>
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20m10-10H2"/></svg>
                 </div>
             </div>
         </div>
@@ -547,149 +551,186 @@
     <!-- Solução -->
     <section class="section" id="solucao">
         <div class="container">
-            <h2 class="section-title">ÉTOS: Seu vendedor que nunca cansa</h2>
-            <div class="cards-grid">
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <h2 class="section-title">O assistente ÉTOS faz tudo</h2>
+            <p class="section-subtitle">Responde dúvidas, agenda consultas, confirma presença, envia lembretes. Tudo automático, 24 horas por dia.</p>
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     </div>
-                    <h3>Responde em segundos</h3>
-                    <p>Cliente escreve no WhatsApp, ÉTOS responde na hora. Sem delay.</p>
+                    <h3>Atende em segundos</h3>
+                    <p>Cliente escreve, ÉTOS responde na hora. WhatsApp. Sem demora.</p>
                 </div>
 
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
-                    <h3>Agenda automaticamente</h3>
-                    <p>Cliente escolhe horário, ÉTOS agenda, confirma e avisa.</p>
+                    <h3>Agenda sozinho</h3>
+                    <p>Cliente escolhe horário, ÉTOS confirma e avisa automaticamente.</p>
                 </div>
 
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
                     </div>
                     <h3>Qualifica leads</h3>
-                    <p>Faz perguntas certas. Só você fala com quem realmente quer comprar.</p>
+                    <p>Faz perguntas certas. Você só conversa com quem quer comprar.</p>
                 </div>
 
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     </div>
-                    <h3>Follow-up inteligente</h3>
-                    <p>Lembra cliente, confirma presença, oferece alternativa.</p>
+                    <h3>Funciona 24h</h3>
+                    <p>Nunca falta, nunca fica cansado, nunca reclama. Sempre lá.</p>
                 </div>
 
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                     </div>
-                    <h3>Tudo pelo WhatsApp</h3>
-                    <p>Seu cliente já tá lá. ÉTOS conversa no app que ele usa.</p>
+                    <h3>Aprende seu negócio</h3>
+                    <p>Quanto mais conversa, mais inteligente fica. Entende seu padrão.</p>
                 </div>
 
-                <div class="card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     </div>
-                    <h3>Você vê tudo em tempo real</h3>
-                    <p>Dashboard mostra quanto ÉTOS vendeu, agendou, confirmou.</p>
+                    <h3>Zero mudança</h3>
+                    <p>Integra com WhatsApp. Seus clientes não percebem mudança nenhuma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nichos -->
+    <section class="section" id="nichos">
+        <div class="container">
+            <h2 class="section-title">Funciona em qualquer negócio</h2>
+            <p class="section-subtitle">Já ajudamos clínicas, oficinas, salões, imobiliárias e restaurantes. Seu negócio é próximo?</p>
+            <div class="nichos-grid">
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </div>
+                    <h3>Clínicas e consultórios</h3>
+                    <p>Agendamento, confirmação de presença, lembretes. Nunca mais perder paciente.</p>
+                </div>
+
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 11h6M9 15h6M12 3v18"/></svg>
+                    </div>
+                    <h3>Oficinas mecânicas</h3>
+                    <p>Orçamento, status do carro, agendamento. Donos saem do telefone.</p>
+                </div>
+
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+                    </div>
+                    <h3>Salões e barbearias</h3>
+                    <p>Agendamento 24h, confirmação automática, lista de espera. Cadeira sempre cheia.</p>
+                </div>
+
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Imobiliárias</h3>
+                    <p>Qualifica lead, agenda visita, responde fora do horário. Fecha mais negócio.</p>
+                </div>
+
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6-6 6 6"/><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M9 13h6M9 17h6"/></svg>
+                    </div>
+                    <h3>Restaurantes e delivery</h3>
+                    <p>Cardápio, pedidos, horários especiais. Comanda sozinho quando você está cozinhando.</p>
+                </div>
+
+                <div class="nicho-card">
+                    <div class="nicho-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg>
+                    </div>
+                    <h3>E mais...</h3>
+                    <p>Qualquer negócio que perde cliente por falta de resposta rápida.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="section light" id="preco">
+    <section class="section section-pricing">
         <div class="container">
-            <h2 class="section-title">Três formas de começar</h2>
-            <p class="section-subtitle">Escolha o plano que faz sentido pro seu negócio</p>
+            <h2 class="section-title">Preços diretos. Sem surpresa.</h2>
+            <p class="section-subtitle">Escolha o plano que faz sentido pro seu tamanho. Sempre há teste grátis.</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Básico</h3>
+                    <h3>Inicial</h3>
                     <div class="price">R$ 197<span class="price-period">/mês</span></div>
-                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 500 de instalação</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 500 instalação</p>
                     <ul class="features-list">
                         <li>Um canal (WhatsApp)</li>
-                        <li>Respostas automáticas</li>
+                        <li>Respostas básicas</li>
                         <li>Agendamento simples</li>
-                        <li>30 dias gratuito</li>
+                        <li>30 dias grátis</li>
                     </ul>
-                    <a href="#contato" class="btn btn-primary">Começar</a>
+                    <a href="https://wa.me/555499993335?text=Quero+o+plano+Inicial" class="cta-primary">Começar</a>
                 </div>
 
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Mais Popular</div>
                     <h3>Profissional</h3>
                     <div class="price">R$ 397<span class="price-period">/mês</span></div>
-                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 1.200 de instalação</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 1.200 instalação</p>
                     <ul class="features-list">
                         <li>WhatsApp + mais canais</li>
                         <li>Qualificação de leads</li>
-                        <li>Follow-up inteligente</li>
+                        <li>Follow-up automático</li>
                         <li>Dashboard completo</li>
-                        <li>60 dias gratuito</li>
+                        <li>60 dias grátis</li>
                     </ul>
-                    <a href="#contato" class="btn btn-primary">Contratar</a>
+                    <a href="https://wa.me/555499993335?text=Quero+o+plano+Profissional" class="cta-primary">Contratar</a>
                 </div>
 
                 <div class="pricing-card">
                     <h3>Premium</h3>
                     <div class="price">R$ 797<span class="price-period">/mês</span></div>
-                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 2.500 de instalação</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray-600);">+ R$ 2.500 instalação</p>
                     <ul class="features-list">
                         <li>Tudo do Profissional</li>
-                        <li>Integração CRM</li>
-                        <li>Análise de concorrência</li>
+                        <li>Integração com CRM</li>
+                        <li>Análise de dados</li>
                         <li>Suporte 24/7</li>
-                        <li>90 dias gratuito</li>
+                        <li>90 dias grátis</li>
                     </ul>
-                    <a href="#contato" class="btn btn-primary">Conversar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">Quem já usa ÉTOS</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Agora não perco mais cliente por falta de resposta rápida. ÉTOS responde 24/7 enquanto durmo."</p>
-                    <p class="testimonial-author">João Silva</p>
-                    <p class="testimonial-role">Clínica Odontológica</p>
-                </div>
-
-                <div class="testimonial">
-                    <p class="testimonial-text">"Economia de 5 horas por semana. Aquele tempo que eu gastava respondendo, agora vendo mais."</p>
-                    <p class="testimonial-author">Maria Costa</p>
-                    <p class="testimonial-role">Salão de Beleza</p>
-                </div>
-
-                <div class="testimonial">
-                    <p class="testimonial-text">"Orçamento sai automático. Cliente confirma agendamento. Nunca foi tão fácil escalar."</p>
-                    <p class="testimonial-author">Carlos Bernardi</p>
-                    <p class="testimonial-role">Oficina Mecânica</p>
+                    <a href="https://wa.me/555499993335?text=Quero+saber+sobre+Premium" class="cta-primary">Conversar</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="cta-final" id="contato">
-        <div class="container">
-            <h2>Pronto pra vender mais?</h2>
-            <p>Primeira conversa é gratuita. Sem compromisso.</p>
-            <a href="https://wa.me/555499993335?text=Oi%20XD!%20Gostaria%20de%20saber%20mais%20sobre%20ÉTOS" target="_blank" class="btn btn-primary">Fale com a gente no WhatsApp</a>
+    <section class="section-cta" id="contato">
+        <div class="section-cta-content">
+            <h2>Pronto pra deixar ÉTOS trabalhar pro seu negócio?</h2>
+            <p>A primeira conversa é gratuita. Sem compromisso. Sem cartão de crédito.</p>
+            <a href="https://wa.me/555499993335?text=Oi%20XD!%20Quero%20ver%20ÉTOS%20funcionando%20no%20meu%20negócio" class="cta-primary">
+                Quero ver funcionando no meu negócio
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 ÉTOS - Agente IA de Vendas. Todos os direitos reservados.</p>
+            <p>&copy; 2026 ÉTOS - Assistente IA para Negócios. Todos os direitos reservados.</p>
         </div>
     </footer>
 
